@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block 'zagolovok' %} 
+<nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+        <a type="button" class="btn me-3 btn-primary" href="">Создать таск</a>
+        
+{% endblock %}
+
+{% block 'content' %}
+
+</nav>
+
+<div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+    <h1 class="display-4 fw-normal">Tasks</h1>
+    <p class="fs-5 text-muted">Эта лента не решенных тасков или по сути посты с вопросами</p>
+</div>
+
+  {% for post in posts %}
+  
+<div class="card mb-4 rounded-3 shadow-sm">
+    <div class="card-header py-3">
+        <h4>Пользователь: {{post.user}}</h4>
+    </div>
+    <div class="card-body">
+            <h1 class="card-title pricing-card-title">{{post.title}}</small></h1>
+        <ul class="list-unstyled mt-1 mb-4">
+            <li>{{post.text}}</li>
+            <li>{{post.created_at}}</li>
+            <li>{{post.answers.count}} ответов</li>
+        </ul>
+        <a type="button" class="w-100 btn btn-lg btn-outline-primary" href="{{post.slug}}">Подробнее</a>
+    </div>
+    
+</div>
+{% endfor %}
+{% endblock %}
+
+

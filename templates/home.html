@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block 'zagolovok' %}
+<nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+    <a type="button" class="btn me-3 btn-primary" href="{% url 'login' %}">Sign-in</a>
+    <a type="button" class="btn me-3 btn-primary" href="{% url  'registration' %}">Sign-up</a>
+  </nav>
+{% endblock %}
+
+{% block 'content' %}
+<div class="pricing-header p-3 pb-md-4 text-center">
+  <h1>Wellcome</h1>
+  <p class="fs-2 text-muted">Добро пожаловать на тестовый сайт Makers Helper данный сайт является подобием 'ответы мейл ру' или 'znaniya.com' </p>
+  <p class="fs-5 text-muted">Это домашняя страница и на ней планировалось сделать ленту последних не новостей и.т.д нажмите кнопку</p>
+</div>
+<a class="w-100 btn btn-lg btn-outline-primary" href="questions/post/">Лента Тасков</a>
+{% endblock %}
